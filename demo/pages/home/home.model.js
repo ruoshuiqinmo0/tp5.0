@@ -5,25 +5,25 @@ class Home extends Base{
   constructor(){
     super();
   }
-  getBannerData(id,callBack){
+  getBannerData(id,callback){
     var params = {
       Url:'banner/'+id,
       sCallBack:function(res){
-        callBack && callBack(res);
+        callback && callback(res.items);
       }
     }
+   
     this.request(params);
-    // wx.request({
-    //   url: 'http://www.baidu.com/id/'+id,
-    //   method:'GET',
-    //   success:function(res){
-    //     // console.table(res);
-    //     callBack(res);
-    //   },
-    //   fail:function(){
+  }
+  getThemeData(callback) {
+    var params = {
+      Url: 'theme?ids=1,2,3',
+      sCallBack: function (res) {
+        callback && callback(res);
+      }
+    }
 
-    //   }
-    // })
+    this.request(params);
   }
 }
 export {Home}

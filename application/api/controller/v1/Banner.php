@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/7/18
- * Time: 16:52
- */
-
 namespace app\api\controller\v1;
 
 use app\api\model\Banner as BannerModel;
 use app\api\validate\IDMustBePostiveInt;
 
-class Banner
+class Banner extends BaseController
 {
 
     /**
@@ -23,9 +16,14 @@ class Banner
     {
         (new IDMustBePostiveInt())->goCheck($id);
         $banner = BannerModel::getBannerByID($id);
-        if ($banner->isEmpty()) {
-            throw new BannerMissException();
+        if (!$banner ) {
+            throw new MissException([
+                'msg' => '请求banner不存在',
+                'errorCode' => 40000
+            ]);
         }
-        return $banner;
+        //dump($banner);
+       return $banner;
     }
 }
+?>

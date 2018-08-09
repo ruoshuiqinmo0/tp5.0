@@ -4,6 +4,6 @@ class Config{
 
   }
 }
-Config.restUrl = 'http://www.baidu.com/';
+Config.restUrl = 'http://z.com/api/v1/';
 
 export {Config};

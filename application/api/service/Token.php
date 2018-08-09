@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/7/23
- * Time: 14:18
- */
 
 namespace app\api\service;
 use app\lib\enum\ScopeEnum;

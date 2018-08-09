@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/7/20
- * Time: 19:53
- */
 
 namespace app\api\model;
 

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/7/25
- * Time: 10:27
- */
 
 namespace app\api\service;
 

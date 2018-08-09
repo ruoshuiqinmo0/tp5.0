@@ -20,4 +20,5 @@ class IDMustBePostiveInt extends BaseValidate
     protected $message = [
         'id' => 'ids必填|ids参数必须是正整数',
     ];
+
 }

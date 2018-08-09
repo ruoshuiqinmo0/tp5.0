@@ -19,7 +19,7 @@ class Theme extends Controller
         (new IDCollection())->goCheck();
         $ids = explode(',',$ids);
         $result = ThemeModel::with('headImg,topicImg')->select($ids);
-        if($result->isEmpty()){
+        if(!$result){
             throw new ThemeException();
         }
         return $result ;
