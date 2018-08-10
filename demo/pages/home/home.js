@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bannerArr:{},
-    themeArr:{},
+    // bannerArr:{},
+    // themeArr:{},
+    // productsArr:{}
     
   },
 
@@ -29,16 +30,30 @@ Page({
     });
 
     home.getThemeData((res) => {
-      console.log(res);
       this.setData({
         'themeArr': res
       });
     });
+
+    home.getProductsData((res) => {
+      this.setData({
+        'productsArr': res
+      });
+    });
     
   },
-
-  callBack:function(res){
-    console.log(res);
+  onProductsItemtap:function(event){
+    var id = home.getDataSet(event,'id');
+    wx.navigateTo({
+      url: '../product/product?id='+id,
+    })
+  },
+  onThemesItemsTap:function(event){
+    var id = home.getDataSet(event,'id');
+    var name = home.getDataSet(event,'name');
+    wx.navigateTo({
+      'url':'../theme/theme?id='+ id +'&name = '+name
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

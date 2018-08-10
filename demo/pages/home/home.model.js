@@ -15,9 +15,21 @@ class Home extends Base{
    
     this.request(params);
   }
+
   getThemeData(callback) {
     var params = {
       Url: 'theme?ids=1,2,3',
+      sCallBack: function (res) {
+        callback && callback(res);
+      }
+    }
+
+    this.request(params);
+  }
+
+  getProductsData(callback) {
+    var params = {
+      Url: 'product/recent',
       sCallBack: function (res) {
         callback && callback(res);
       }
